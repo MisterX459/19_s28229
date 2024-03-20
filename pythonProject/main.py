@@ -78,3 +78,17 @@ try:
     print(square_roots_list)
 except ValueError as e:
     print("Error:", e)
+#task 7
+
+from square_generator.square_generator import SquareGenerator
+
+class CubicGenerator(SquareGenerator):
+    def generate_cubes(self, start, end):
+        cubes = [x**3 for x in range(start, end+1)]
+        return cubes
+cubic_gen = CubicGenerator()
+start = 1
+end = 10
+cubes_list = cubic_gen.generate_cubes(start, end)
+print("List of cubes of numbers from {start} to {end}:")
+print(cubes_list)

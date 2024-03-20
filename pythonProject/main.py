@@ -92,3 +92,33 @@ end = 10
 cubes_list = cubic_gen.generate_cubes(start, end)
 print("List of cubes of numbers from {start} to {end}:")
 print(cubes_list)
+
+#task 9
+
+from square_generator.square_generator import SquareGenerator
+class CubicGenerator(SquareGenerator):
+    def generate_squares(self, start, end):
+        if start >= end:
+            raise ValueError("Start of the range must be less than the end.")
+
+        square9 = [x ** 2 for x in range(start, end + 1)]
+        return square9
+
+    def generate_cubes(self, start, end):
+        cubes = [x ** 3 for x in range(start, end + 1)]
+        return cubes
+
+cubic_generator = CubicGenerator()
+start = 1
+end = 10
+
+try:
+    squares_list = cubic_generator.generate_squares(start, end)
+    print(f"List of squares of numbers from {start} to {end}:")
+    print(squares_list)
+except ValueError as e:
+    print("Error:", e)
+
+cubes_list = cubic_gen.generate_cubes(start, end)
+print(f"List of cubes of numbers from {start} to {end}:")
+print(cubes_list)
